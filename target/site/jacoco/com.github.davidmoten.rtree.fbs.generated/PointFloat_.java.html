@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PointFloat_.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">rtree</a> &gt; <a href="index.source.html" class="el_package">com.github.davidmoten.rtree.fbs.generated</a> &gt; <span class="el_source">PointFloat_.java</span></div><h1>PointFloat_.java</h1><pre class="source lang-java linenums">// automatically generated, do not modify
+
+package com.github.davidmoten.rtree.fbs.generated;
+
+import java.nio.ByteBuffer;
+
+import com.google.flatbuffers.FlatBufferBuilder;
+import com.google.flatbuffers.Struct;
+
+@SuppressWarnings(&quot;unused&quot;)
+<span class="fc" id="L11">public final class PointFloat_ extends Struct {</span>
+<span class="fc" id="L12">  public PointFloat_ __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; return this; }</span>
+
+<span class="fc" id="L14">  public float x() { return bb.getFloat(bb_pos + 0); }</span>
+<span class="fc" id="L15">  public float y() { return bb.getFloat(bb_pos + 4); }</span>
+
+  public static int createPointFloat_(FlatBufferBuilder builder, float x, float y) {
+<span class="fc" id="L18">    builder.prep(4, 8);</span>
+<span class="fc" id="L19">    builder.putFloat(y);</span>
+<span class="fc" id="L20">    builder.putFloat(x);</span>
+<span class="fc" id="L21">    return builder.offset();</span>
+  }
+};
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

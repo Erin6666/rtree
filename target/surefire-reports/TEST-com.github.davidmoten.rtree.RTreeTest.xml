@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="87" failures="0" name="com.github.davidmoten.rtree.RTreeTest" time="10.778" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.131-b11"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/young/Desktop/rtree"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/young/Desktop/rtree"/>
+    <property name="java.runtime.version" value="1.8.0_131-b11"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/xg/w6ptz3k96n54p6tf_y7plkhw0000gn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Users/young/apache-maven-3.6.3/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/young/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="maven.conf" value="/Users/young/apache-maven-3.6.3/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.15.1"/>
+    <property name="library.jansi.path" value="/Users/young/apache-maven-3.6.3/lib/jansi-native"/>
+    <property name="user.home" value="/Users/young"/>
+    <property name="user.timezone" value="America/New_York"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="young"/>
+    <property name="java.class.path" value="/Users/young/apache-maven-3.6.3/boot/plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_131"/>
+    <property name="java.ext.dirs" value="/Users/young/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Users/young/apache-maven-3.6.3"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testBulkLoadingEmpty" time="0.008"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchOnOneItem" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchWithDistanceFunctionIntersectsNothing" time="0.004"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSplitterRStarThrowsExceptionOnEmptyList" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testIntersectsPointLine" time="0.01"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeleteAllIfThereAreMoreThanMaxChildren" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchOnGreekDataUsingFlatBuffersFactory" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testNearestToAPoint" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testInstantiation" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchWithIntersectsPointFunctionReturnsOne" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testObservableDeletion" time="0.017"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testNearestSameDirection" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testBulkLoadingTreeAndStarTreeReturnsSameAsStandardRTree" time="0.492"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeleteFromEmptyTree" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchWithCircleFindsCentreOnly" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testBulkLoadingEntryCount" time="0.028"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testAddOverload" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testUnsubscribeWhileIteratingNonLeafNode" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testStandardRTreeSearch" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testVisualizer" time="0.563"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="calculateAsStringOfEmptyTree" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testBuilder1" time="0.017"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testBuilder2" time="0.016"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testBuilder3" time="0.016"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testBuilder4" time="0.015"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeleteOneFromTreeWithDepthGreaterThanOne" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeleteIssue81" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDepthWith0" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchWithDistanceFunctionIntersectsMbrAndActualGeometry" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testPartialDeletion" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testUnsubscribeWhileIteratingLeafNode" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSizeIsOneIfTreeHasOneEntry" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testRTreeRootMbrWhenRTreeNonEmpty" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchOnOneItemOnBulkLoadingRTree" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchWithLineFindsAll" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchWithLineFindsOne" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testUnsubscribe" time="0.016"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testExampleOnReadMe" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testIterableDeletion" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSizeAfterDelete" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchWithLineFindsNone" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testRTreeRootMbrWhenRTreeEmpty" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="calculateDepthOfEmptyTree" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeleteOfEntryThatDoesNotExistFromTreeOfOneEntry" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testNearestHonoursUnsubscribeJustBeforeCompletion" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeleteOnlyDeleteOneIfThereAreMoreThanMaxChildren" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testBackpressureIterationForUpTo1000Entries" time="0.913"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSizeIsZeroIfTreeEmpty" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchWithCircleFindsAll" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchGreekEarthquakesDouble" time="0.659"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeleteItemThatIsNotPresentDoesNothing" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testContext" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testNearestReturnsInOrder" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testBulkLoadingWithOneItemIsNotEmpty" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testFullDeletion" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeleteOneFromLargeTreeThenDeleteAllAndEnsureEmpty" time="0.217"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDepthWithMaxChildren3Entries10" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchEmptyTree" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDepthWithMaxChildren3Entries1" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDepthWithMaxChildren3Entries2" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDepthWithMaxChildren3Entries3" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDepthWithMaxChildren3Entries4" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDepthWithMaxChildren3Entries8" time="0.098"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchWithIntersectsPointFunctionReturnsNone" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchWithIntersectsRectangleFunction" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSizeIsFiveIfTreeHasFiveEntries" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testVisualizerWithGreekData" time="7.522"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testGroupByIssue40" time="0.015"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeleteOneFromOne" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testForMeiZhao" time="0.002"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeleteWithGeometry" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchOfPointWithinDistance" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeleteOverload" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testBackpressureForOverflow" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testStandardRTreeSearch2" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testNearestDifferentDirections" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchOfPoint" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeleteIssue81d" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeleteIssue81f" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeletionOfEntryThatDoesNotExistFromNonLeaf" time="0.005"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testTreeWithOneItemIsNotEmpty" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testVisualizerWithEmptyTree" time="0.021"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testAddObservable" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testDeletionThatRemovesAllNodesChildren" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchWithDistanceFunctionIntersectsMbrButNotActualGeometry" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testSearchConditionAlwaysFalse" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.RTreeTest" name="testPerformanceAndEntriesCount" time="0.106"/>
+</testsuite>

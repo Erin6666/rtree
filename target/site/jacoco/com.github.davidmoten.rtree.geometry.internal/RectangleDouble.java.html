@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RectangleDouble.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">rtree</a> &gt; <a href="index.source.html" class="el_package">com.github.davidmoten.rtree.geometry.internal</a> &gt; <span class="el_source">RectangleDouble.java</span></div><h1>RectangleDouble.java</h1><pre class="source lang-java linenums">package com.github.davidmoten.rtree.geometry.internal;
+
+import com.github.davidmoten.guavamini.Objects;
+import com.github.davidmoten.guavamini.Optional;
+import com.github.davidmoten.guavamini.Preconditions;
+import com.github.davidmoten.rtree.geometry.Geometry;
+import com.github.davidmoten.rtree.geometry.Rectangle;
+import com.github.davidmoten.rtree.internal.util.ObjectsHelper;
+
+public final class RectangleDouble implements Rectangle {
+    private final double x1, y1, x2, y2;
+
+<span class="fc" id="L13">    private RectangleDouble(double x1, double y1, double x2, double y2) {</span>
+<span class="pc bpc" id="L14" title="1 of 2 branches missed.">        Preconditions.checkArgument(x2 &gt;= x1);</span>
+<span class="pc bpc" id="L15" title="1 of 2 branches missed.">        Preconditions.checkArgument(y2 &gt;= y1);</span>
+<span class="fc" id="L16">        this.x1 = x1;</span>
+<span class="fc" id="L17">        this.y1 = y1;</span>
+<span class="fc" id="L18">        this.x2 = x2;</span>
+<span class="fc" id="L19">        this.y2 = y2;</span>
+<span class="fc" id="L20">    }</span>
+
+    public static RectangleDouble create(double x1, double y1, double x2, double y2) {
+<span class="fc" id="L23">        return new RectangleDouble((double) x1, (double) y1, (double) x2, (double) y2);</span>
+    }
+
+    @Override
+    public double x1() {
+<span class="fc" id="L28">        return x1;</span>
+    }
+
+    @Override
+    public double y1() {
+<span class="fc" id="L33">        return y1;</span>
+    }
+
+    @Override
+    public double x2() {
+<span class="fc" id="L38">        return x2;</span>
+    }
+
+    @Override
+    public double y2() {
+<span class="fc" id="L43">        return  y2;</span>
+    }
+
+    @Override
+    public Rectangle add(Rectangle r) {
+<span class="fc" id="L48">        return new RectangleDouble(min(x1, r.x1()), min(y1, r.y1()), max(x2, r.x2()),</span>
+<span class="fc" id="L49">                max(y2, r.y2()));</span>
+    }
+
+    @Override
+    public boolean contains(double x, double y) {
+<span class="nc bnc" id="L54" title="All 8 branches missed.">        return x &gt;= x1 &amp;&amp; x &lt;= x2 &amp;&amp; y &gt;= y1 &amp;&amp; y &lt;= y2;</span>
+    }
+
+    @Override
+    public boolean intersects(Rectangle r) {
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        if (r instanceof RectangleDouble) {</span>
+<span class="fc" id="L60">            RectangleDouble rd = (RectangleDouble) r;</span>
+<span class="fc" id="L61">            return intersects(rd);</span>
+        } else {
+<span class="fc" id="L63">            return GeometryUtil.intersects(x1, y1, x2, y2, r.x1(), r.y1(), r.x2(), r.y2());</span>
+        }
+    }
+
+    private boolean intersects(RectangleDouble rd) {
+<span class="fc" id="L68">        return GeometryUtil.intersects(x1, y1, x2, y2, rd.x1, rd.y1, rd.x2, rd.y2);</span>
+    }
+
+    @Override
+    public double distance(Rectangle r) {
+<span class="fc" id="L73">        return GeometryUtil.distance(x1, y1, x2, y2, r.x1(), r.y1(), r.x2(), r.y2());</span>
+    }
+
+    @Override
+    public Rectangle mbr() {
+<span class="fc" id="L78">        return this;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L83">        return &quot;Rectangle [x1=&quot; + x1 + &quot;, y1=&quot; + y1 + &quot;, x2=&quot; + x2 + &quot;, y2=&quot; + y2 + &quot;]&quot;;</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="fc" id="L88">        return Objects.hashCode(x1, y1, x2, y2);</span>
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+<span class="fc" id="L93">        Optional&lt;RectangleDouble&gt; other = ObjectsHelper.asClass(obj, RectangleDouble.class);</span>
+<span class="pc bpc" id="L94" title="1 of 2 branches missed.">        if (other.isPresent()) {</span>
+<span class="pc bpc" id="L95" title="2 of 4 branches missed.">            return Objects.equal(x1, other.get().x1) &amp;&amp; Objects.equal(x2, other.get().x2)</span>
+<span class="pc bpc" id="L96" title="2 of 4 branches missed.">                    &amp;&amp; Objects.equal(y1, other.get().y1) &amp;&amp; Objects.equal(y2, other.get().y2);</span>
+        } else
+<span class="nc" id="L98">            return false;</span>
+    }
+
+    @Override
+    public double intersectionArea(Rectangle r) {
+<span class="fc bfc" id="L103" title="All 2 branches covered.">        if (!intersects(r))</span>
+<span class="fc" id="L104">            return 0;</span>
+        else {
+<span class="fc" id="L106">            return create(max(x1, r.x1()), max(y1, r.y1()), min(x2, r.x2()), min(y2, r.y2()))</span>
+<span class="fc" id="L107">                    .area();</span>
+        }
+    }
+
+    @Override
+    public Geometry geometry() {
+<span class="fc" id="L113">        return this;</span>
+    }
+
+    private static double max(double a, double b) {
+<span class="fc bfc" id="L117" title="All 2 branches covered.">        if (a &lt; b)</span>
+<span class="fc" id="L118">            return b;</span>
+        else
+<span class="fc" id="L120">            return a;</span>
+    }
+
+    private static double min(double a, double b) {
+<span class="fc bfc" id="L124" title="All 2 branches covered.">        if (a &lt; b)</span>
+<span class="fc" id="L125">            return a;</span>
+        else
+<span class="fc" id="L127">            return b;</span>
+    }
+
+    @Override
+    public double perimeter() {
+<span class="fc" id="L132">        return 2 * (x2 - x1) + 2 * (y2 - y1);</span>
+    }
+
+    @Override
+    public double area() {
+<span class="fc" id="L137">        return (x2 - x1) * (y2 - y1);</span>
+    }
+
+    @Override
+    public boolean isDoublePrecision() {
+<span class="fc" id="L142">        return true;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
