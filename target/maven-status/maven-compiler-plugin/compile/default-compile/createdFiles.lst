@@ -119,6 +119,7 @@ com/github/davidmoten/rtree/Visualizer.class
 com/github/davidmoten/rtree/geometry/internal/GeometryUtil.class
 com/github/davidmoten/rtree/geometry/internal/RectangleFloat.class
 com/github/davidmoten/rtree/fbs/generated/LineFloat_.class
+com/github/davidmoten/rtree/Skyline.class
 com/github/davidmoten/rtree/internal/NodeAndEntries.class
 com/github/davidmoten/rtree/Serializers.class
 com/github/davidmoten/rtree/EntryFactory.class

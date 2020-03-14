@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="com.github.davidmoten.rtree.fbs.SerializerFlatBuffersTest" time="2.436" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="com.github.davidmoten.rtree.fbs.SerializerFlatBuffersTest" time="2.625" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib"/>
@@ -62,9 +62,9 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="com.github.davidmoten.rtree.fbs.SerializerFlatBuffersTest" name="testInputStreamReturnsArrayInSmallChunks" time="0"/>
-  <testcase classname="com.github.davidmoten.rtree.fbs.SerializerFlatBuffersTest" name="testSerializeRoundTripToDefaultStructureBackpressure" time="0.752"/>
-  <testcase classname="com.github.davidmoten.rtree.fbs.SerializerFlatBuffersTest" name="testInputStreamNotAsLongAsExpected" time="0.001"/>
-  <testcase classname="com.github.davidmoten.rtree.fbs.SerializerFlatBuffersTest" name="testSerializeRoundTripToFlatBuffersSingleArray" time="0.547"/>
-  <testcase classname="com.github.davidmoten.rtree.fbs.SerializerFlatBuffersTest" name="testSerializeRoundTripToDefaultStructure" time="0.556"/>
-  <testcase classname="com.github.davidmoten.rtree.fbs.SerializerFlatBuffersTest" name="testSerializeRoundTripToFlatBuffersSingleArrayBackpressure" time="0.58"/>
+  <testcase classname="com.github.davidmoten.rtree.fbs.SerializerFlatBuffersTest" name="testSerializeRoundTripToDefaultStructureBackpressure" time="0.765"/>
+  <testcase classname="com.github.davidmoten.rtree.fbs.SerializerFlatBuffersTest" name="testInputStreamNotAsLongAsExpected" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.fbs.SerializerFlatBuffersTest" name="testSerializeRoundTripToFlatBuffersSingleArray" time="0.623"/>
+  <testcase classname="com.github.davidmoten.rtree.fbs.SerializerFlatBuffersTest" name="testSerializeRoundTripToDefaultStructure" time="0.597"/>
+  <testcase classname="com.github.davidmoten.rtree.fbs.SerializerFlatBuffersTest" name="testSerializeRoundTripToFlatBuffersSingleArrayBackpressure" time="0.64"/>
 </testsuite>

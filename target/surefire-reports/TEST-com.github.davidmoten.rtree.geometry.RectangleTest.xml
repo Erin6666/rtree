@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="27" failures="0" name="com.github.davidmoten.rtree.geometry.RectangleTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="27" failures="0" name="com.github.davidmoten.rtree.geometry.RectangleTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib"/>
@@ -69,7 +69,7 @@
   <testcase classname="com.github.davidmoten.rtree.geometry.RectangleTest" name="testIntersectionAreaCornerIntersect" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.RectangleTest" name="testDistanceWhenSeparatedByDiagonally" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.RectangleTest" name="testDistanceWhenSeparatedByXOnlyAndOverlapOnY" time="0"/>
-  <testcase classname="com.github.davidmoten.rtree.geometry.RectangleTest" name="testYParametersWrongOrderThrowsException" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.geometry.RectangleTest" name="testYParametersWrongOrderThrowsException" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.RectangleTest" name="testDistanceWhenSeparatedByXOnly" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.RectangleTest" name="testDistanceToOverlapIsZero" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.RectangleTest" name="testInequalityWithNull" time="0"/>

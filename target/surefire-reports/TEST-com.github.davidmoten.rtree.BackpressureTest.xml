@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="11" failures="0" name="com.github.davidmoten.rtree.BackpressureTest" time="0.697" errors="0" skipped="0">
+<testsuite tests="11" failures="0" name="com.github.davidmoten.rtree.BackpressureTest" time="0.702" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib"/>
@@ -61,15 +61,15 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testBackpressureIterateWhenNodeHasMaxChildrenAndIsRoot" time="0.001"/>
-  <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testRequestZeroWhenUnsubscribed" time="0.623"/>
-  <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testBackpressureIterateWhenNodeHasMaxChildrenAndIsNotRoot" time="0.003"/>
+  <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testBackpressureIterateWhenNodeHasMaxChildrenAndIsRoot" time="0.002"/>
+  <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testRequestZeroWhenUnsubscribed" time="0.613"/>
+  <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testBackpressureIterateWhenNodeHasMaxChildrenAndIsNotRoot" time="0.006"/>
   <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testConstructorIsPrivate" time="0.001"/>
   <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testBackpressureIterateWhenConditionFailsAgainstLeafNode" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testRequestZero" time="0.001"/>
-  <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testBackpressureIterateWhenConditionFailsAgainstNonLeafNode" time="0.004"/>
+  <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testBackpressureIterateWhenConditionFailsAgainstNonLeafNode" time="0.002"/>
   <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testBackpressureRequestZero" time="0"/>
-  <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testBackpressureFastPathNotInitiatedTwice" time="0.001"/>
-  <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testBackpressureSearch" time="0.062"/>
+  <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testBackpressureFastPathNotInitiatedTwice" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testBackpressureSearch" time="0.076"/>
   <testcase classname="com.github.davidmoten.rtree.BackpressureTest" name="testBackpressureSearchNodeWithConditionThatAlwaysReturnsFalse" time="0.001"/>
 </testsuite>

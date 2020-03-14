@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="com.github.davidmoten.rtree.KryoSerializationTest" time="0.096" errors="0" skipped="1">
+<testsuite tests="2" failures="0" name="com.github.davidmoten.rtree.KryoSerializationTest" time="0.08" errors="0" skipped="1">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib"/>
@@ -61,8 +61,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.github.davidmoten.rtree.KryoSerializationTest" name="testRTree" time="0">
+  <testcase classname="com.github.davidmoten.rtree.KryoSerializationTest" name="testRTree" time="0.004">
     <skipped/>
   </testcase>
-  <testcase classname="com.github.davidmoten.rtree.KryoSerializationTest" name="testKryo" time="0.096"/>
+  <testcase classname="com.github.davidmoten.rtree.KryoSerializationTest" name="testKryo" time="0.076"/>
 </testsuite>

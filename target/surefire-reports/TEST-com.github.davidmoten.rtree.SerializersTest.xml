@@ -61,18 +61,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testDeleteFromFlatBuffers" time="0.023"/>
-  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testAddToFlatBuffersWhenRootNodeIsNonLeaf" time="0.004"/>
+  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testDeleteFromFlatBuffers" time="0.021"/>
+  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testAddToFlatBuffersWhenRootNodeIsNonLeaf" time="0.003"/>
   <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testAddToFlatBuffers" time="0.001"/>
-  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="canRoundTripEmptyTree" time="0"/>
-  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testStringRectangleDoubleSerialization" time="0.002"/>
-  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testStringCircleDoubleSerialization" time="0.003"/>
-  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testJavaIoSerialization" time="0.056"/>
-  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testStringLineDoubleSerialization" time="0.002"/>
+  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="canRoundTripEmptyTree" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testStringRectangleDoubleSerialization" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testStringCircleDoubleSerialization" time="0.002"/>
+  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testJavaIoSerialization" time="0.057"/>
+  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testStringLineDoubleSerialization" time="0.003"/>
   <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="isUtilityClass" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testStringRectangleFloatSerialization" time="0.001"/>
   <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testStringCircleFloatSerialization" time="0.002"/>
-  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testStringLineFloatSerialization" time="0.001"/>
-  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testStringPointSerialization" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testStringLineFloatSerialization" time="0.002"/>
+  <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testStringPointSerialization" time="0.001"/>
   <testcase classname="com.github.davidmoten.rtree.SerializersTest" name="testDeleteFromFlatBuffersWhenRootNodeIsNonLeaf" time="0.001"/>
 </testsuite>

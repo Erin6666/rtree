@@ -77,16 +77,16 @@
   <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineMbr" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineDistanceToRectangleIsZeroWhenContainsWestEdge" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testDoesNotIntersectRectangle" time="0"/>
-  <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineDoesNotIntersectCircle" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineDoesNotIntersectCircle" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineDoesNotIntersectCircleEast" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineDoesNotIntersectCircleWest" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineDoesIntersectCircleSouth" time="0"/>
-  <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineDistanceToRectangleIsZeroWhenOneEndIsInside" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineDistanceToRectangleIsZeroWhenOneEndIsInside" time="0.001"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineDistanceToRectangleIsZeroWhenContainsNorthEdge" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testDoesIntersectOtherLine" time="0"/>
-  <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineDoubleIntersectsWithHorizontalLine" time="0.001"/>
+  <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineDoubleIntersectsWithHorizontalLine" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineDoesIntersectCircleEast" time="0"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineDoesIntersectCircleWest" time="0"/>
-  <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineFloatIntersectsWithHorizontalLine" time="0"/>
+  <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineFloatIntersectsWithHorizontalLine" time="0.001"/>
   <testcase classname="com.github.davidmoten.rtree.geometry.LineTest" name="testLineDoesNotIntersectsPoint" time="0"/>
 </testsuite>
