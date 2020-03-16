@@ -20,7 +20,7 @@ import rx.Observable;
 import rx.functions.*;
 import rx.schedulers.Schedulers;
 
-public class chucitest {
+public class SkylineTest {
     private static Rectangle r(float n, float m) {
         return rectangle(n, m, n + 1, m + 1);
     }
@@ -28,7 +28,7 @@ public class chucitest {
     private static Skyline sl;
     private static ArrayList skyline;
     @Test
-    public void exampletest() throws FileNotFoundException,IOException{
+    public void calculatetest() throws FileNotFoundException,IOException{
        // File file = new File("/Users/chuci/github/rtree/target/dataset1.txt");
         File file = new File("target/dataset1.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
@@ -47,36 +47,27 @@ public class chucitest {
             if(x > x_max) x_max = x;
             if(y > y_max) y_max = y;
         }
-
         tree.visualize(1000,1000)
                 .save("target/originalTree.png");
         sl = new Skyline(tree);
         sl.setMaxValue(x_max,y_max);
         sl.setCount(count);
-
         skyline = sl.getSL();
+        System.out.println("The original skyline is:");
         System.out.println(skyline);
-
-
+        System.out.println("========================");
         RTree<Integer, Point> new_rtree =  RTree.create();
         for (Object each:skyline){
             new_rtree = new_rtree.add(1, point(((EntryDefault) each).geometry().mbr().x1(),-((EntryDefault) each).geometry().mbr().y1()));
         }
         new_rtree.visualize(1000,1000)
                 .save("target/SkylineTree.png");
-
-
-
-
-
-
-
     }
 
     @Test
     public void addTest()throws FileNotFoundException,IOException{
         //add point
-        exampletest();
+        calculatetest();
         int orginal = tree.size();
         double p_x = 33.919998168945;
         double p_y = 20.079999923706;
@@ -85,16 +76,22 @@ public class chucitest {
         skyline = sl.getSL();
         tree = sl.getRtree();
         System.out.println("========================");
+        System.out.println("The skyline after adding a point is:");
         System.out.println(skyline);
-
-
+        System.out.println("========================");
+        RTree<Integer, Point> new_rtree =  RTree.create();
+        for (Object each:skyline){
+            new_rtree = new_rtree.add(1, point(((EntryDefault) each).geometry().mbr().x1(),-((EntryDefault) each).geometry().mbr().y1()));
+        }
+        new_rtree.visualize(1000,1000)
+                .save("target/AddSkylineTree.png");
 
     }
 
     @Test
     public void deleteTest()throws FileNotFoundException,IOException{
         //delete
-        exampletest();
+        calculatetest();
         double p_x = 33.91999816894531;
         double p_y = 20.079999923706055;
         Point p = Geometries.point(p_x, p_y);
@@ -108,7 +105,9 @@ public class chucitest {
 //        EntryDefault ed = new EntryDefault(1, p);
 //        skyline.remove(ed);
         skyline = sl.getSL();
+        System.out.println("The skyline after deleting a point is:");
         System.out.println(skyline);
+        System.out.println("========================");
         RTree<Integer, Point> new_rtree =  RTree.create();
         for (Object each:skyline){
             new_rtree = new_rtree.add(1, point(((EntryDefault) each).geometry().mbr().x1(),-((EntryDefault) each).geometry().mbr().y1()));
