@@ -28,7 +28,7 @@ public class SkylineTest {
     private static Skyline sl;
     private static ArrayList skyline;
     @Test
-    public void calculatetest() throws FileNotFoundException,IOException{
+    public void calculateTest() throws FileNotFoundException,IOException{
        // File file = new File("/Users/chuci/github/rtree/target/dataset1.txt");
         File file = new File("src/test/resources/dataset1.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
@@ -67,7 +67,7 @@ public class SkylineTest {
     @Test
     public void addTest()throws FileNotFoundException,IOException{
         //add point
-        calculatetest();
+        calculateTest();
         int orginal = tree.size();
         double p_x = 33.919998168945;
         double p_y = 20.079999923706;
@@ -91,7 +91,7 @@ public class SkylineTest {
     @Test
     public void deleteTest()throws FileNotFoundException,IOException{
         //delete
-        calculatetest();
+        calculateTest();
         double p_x = 33.91999816894531;
         double p_y = 20.079999923706055;
         Point p = Geometries.point(p_x, p_y);
