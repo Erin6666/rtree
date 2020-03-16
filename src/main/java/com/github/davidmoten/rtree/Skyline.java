@@ -28,7 +28,7 @@ public class Skyline {
     public void setCount(int count){
         this.count = count;
     }
-    public void setMaxValue(int x, int y){
+    public void setMaxValue(double x, double y){
         this.x_max = x;
         this.y_max = y;
     }
@@ -150,21 +150,33 @@ public class Skyline {
         }
         if(flag){
             this.count += 1;
-            EntryDefault ed = new EntryDefault(getCount(), point(p.x(),p.y()));
-            this.tree.add(getCount(), point(p.x(),p.y()));
+            EntryDefault ed = new EntryDefault(1, point(p.x(),p.y()));
+
             S.add(ed);
         }
+        this.tree = this.tree.add(1, point(p.x(),p.y()));
 
     }
+
+
+
     public void delete(Point p){
         Observable leaf = this.tree.search(p);
-        this.tree.delete(leaf, true);
+        this.tree = this.tree.delete(1, p);
 
+
+        boolean isSkyline = false;
         for(EntryDefault entry: SkylineList){
             if(entry.geometry().mbr().x1() == p.x() && entry.geometry().mbr().y1() == p.y()){
+                isSkyline = true;
                 SkylineList.remove(entry);
                 break;
             }
+        }
+
+        if(!isSkyline){
+            System.out.println("p is not in skyline");
+            return;
         }
 
         PriorityQueue<Point> pq = ElectionRange(p);
@@ -187,7 +199,7 @@ public class Skyline {
 
         for(Point item: L){
             count += 1;
-            EntryDefault ed = new EntryDefault(getCount(), point(item.x(),item.y()));
+            EntryDefault ed = new EntryDefault(1, point(item.x(),item.y()));
             SkylineList.add(ed);
         }
 
@@ -208,8 +220,9 @@ public class Skyline {
             }
 
         }
-
+        System.out.println("x_max: " + x_max + " y_max: " + y_max);
         FindRangePoint(obj,pq,  p.x(), p.y(), x_max, y_max);
+        System.out.println(pq.size());
         return pq;
     }
 
