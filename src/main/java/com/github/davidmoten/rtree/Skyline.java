@@ -23,8 +23,16 @@ public class Skyline {
     private  double y_max;
     public Skyline(RTree t){
         this.tree = t;
-
+        this.calculateSL();
     }
+
+    public Skyline(RTree t, boolean flag){
+        this.tree = t;
+        if (flag) {
+            this.calculateSL();
+        }
+    }
+
     public void setCount(int count){
         this.count = count;
     }

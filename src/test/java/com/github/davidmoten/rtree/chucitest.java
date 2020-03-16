@@ -53,7 +53,6 @@ public class chucitest {
         sl = new Skyline(tree);
         sl.setMaxValue(x_max,y_max);
         sl.setCount(count);
-        sl.calculateSL();
 
         skyline = sl.getSL();
         System.out.println(skyline);
