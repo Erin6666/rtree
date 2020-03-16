@@ -30,7 +30,7 @@ public class SkylineTest {
     @Test
     public void calculatetest() throws FileNotFoundException,IOException{
        // File file = new File("/Users/chuci/github/rtree/target/dataset1.txt");
-        File file = new File("target/dataset1.txt");
+        File file = new File("src/test/resources/dataset1.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         String st;
         tree = RTree.create();
