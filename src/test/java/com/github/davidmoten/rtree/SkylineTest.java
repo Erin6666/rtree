@@ -40,8 +40,8 @@ public class SkylineTest {
         double y_max = Double.MIN_VALUE;
         while ((st = br2.readLine()) != null){
             String[] m = st.split(" ");
-            double x = Float.parseFloat(m[0]);
-            double y = Float.parseFloat(m[1]);
+            double x = Double.parseDouble(m[0]);
+            double y = Double.parseDouble(m[1]);
             tree = tree.add(1, point(x, y));
             count++;
             if(x > x_max) x_max = x;
@@ -53,6 +53,8 @@ public class SkylineTest {
         sl.setMaxValue(x_max,y_max);
         sl.setCount(count);
         skyline = sl.getSL();
+        String filename = "target/SkylineList.txt";
+        sl.WriteFile(filename);
         System.out.println("The original skyline is:");
         System.out.println(skyline);
         System.out.println("========================");
@@ -62,22 +64,41 @@ public class SkylineTest {
         }
         new_rtree.visualize(1000,1000)
                 .save("target/SkylineTree.png");
+
     }
 
     @Test
     public void addTest()throws FileNotFoundException,IOException{
         //add point
+//        sl = new Skyline(tree, true);
         calculateTest();
-        int orginal = tree.size();
-        double p_x = 33.919998168945;
-        double p_y = 20.079999923706;
-        Point p =  Geometries.point(p_x, p_y);
-        sl.add(p);
-        skyline = sl.getSL();
-        tree = sl.getRtree();
-        System.out.println("========================");
-        System.out.println("The skyline after adding a point is:");
-        System.out.println(skyline);
+        //Read the insert point from file
+        String filename = "src/test/resources/insertpoint.txt";
+        String st;
+        BufferedReader br2 = new BufferedReader(new FileReader(filename));
+        ArrayList<Point> insert_point = new ArrayList<>();
+        while ((st = br2.readLine()) != null){
+            String[] m = st.split(" ");
+            double x = Double.parseDouble(m[0]);
+            double y = Double.parseDouble(m[1]);
+
+            Point p = Geometries.point(x, y);
+            insert_point.add(p);
+
+        }
+//        double p_x = 33.919998168945;
+//        double p_y = 20.079999923706;
+//        Point p =  Geometries.point(p_x, p_y);
+        for(Point p: insert_point){
+            sl.add(p);
+            skyline = sl.getSL();
+            tree = sl.getRtree();
+            System.out.println("========================");
+            System.out.println("The skyline after adding a point is:");
+            System.out.println(skyline);
+
+        }
+
         System.out.println("========================");
         RTree<Integer, Point> new_rtree =  RTree.create();
         for (Object each:skyline){
@@ -86,27 +107,47 @@ public class SkylineTest {
         new_rtree.visualize(1000,1000)
                 .save("target/AddSkylineTree.png");
 
+        filename = "target/AddSkylineList.txt";
+        sl.WriteFile(filename);
+
+
+
+
     }
 
     @Test
     public void deleteTest()throws FileNotFoundException,IOException{
         //delete
+//        sl = new Skyline(tree, true);
         calculateTest();
-        double p_x = 33.91999816894531;
-        double p_y = 20.079999923706055;
-        Point p = Geometries.point(p_x, p_y);
-        System.out.println("========================");
-//        int x = tree.size();
-//        tree = tree.delete(1,p);
-//
-//        int s = tree.size();
-//        PriorityQueue<Point> pq = sl.ElectionRange(p);
-        sl.delete(p);
-//        EntryDefault ed = new EntryDefault(1, p);
-//        skyline.remove(ed);
-        skyline = sl.getSL();
-        System.out.println("The skyline after deleting a point is:");
-        System.out.println(skyline);
+        //Read the delete point from file
+        String filename = "src/test/resources/deletepoint.txt";
+        String st;
+        BufferedReader br2 = new BufferedReader(new FileReader(filename));
+        ArrayList<Point> delete_point = new ArrayList<>();
+        while ((st = br2.readLine()) != null){
+            String[] m = st.split(" ");
+            double x = Double.parseDouble(m[0]);
+            double y = Double.parseDouble(m[1]);
+
+            Point p = Geometries.point(x, y);
+            delete_point.add(p);
+
+        }
+//        double p_x = 33.91999816894531;
+//        double p_y = 20.079999923706055;
+//        Point p = Geometries.point(p_x, p_y);
+
+        for(Point p: delete_point){
+            System.out.println("========================");
+
+            sl.delete(p);
+
+            skyline = sl.getSL();
+            System.out.println("The skyline after deleting a point is:");
+            System.out.println(skyline);
+        }
+
         System.out.println("========================");
         RTree<Integer, Point> new_rtree =  RTree.create();
         for (Object each:skyline){
@@ -114,5 +155,8 @@ public class SkylineTest {
         }
         new_rtree.visualize(1000,1000)
                 .save("target/DeleteSkylineTree.png");
+
+        filename = "target/DeleteSkylineList.txt";
+        sl.WriteFile(filename);
     }
 }

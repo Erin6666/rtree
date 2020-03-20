@@ -8,6 +8,7 @@ import com.github.davidmoten.rtree.internal.NonLeafDefault;
 import com.github.davidmoten.rtree.internal.LeafDefault;
 import rx.Observable;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -143,7 +144,7 @@ public class Skyline {
         ArrayList<EntryDefault> S = getSL();
         boolean flag = false;
         for(EntryDefault item: S){
-            if(p.x() > item.geometry().mbr().x1() && p.y() > item.geometry().mbr().y1()){
+            if(p.x() >= item.geometry().mbr().x1() && p.y() >= item.geometry().mbr().y1()){
                 flag = false;
                 break;
             }
@@ -248,6 +249,28 @@ public class Skyline {
                 FindRangePoint(child, pq, x_0, y_0, x_1, y_1);
             }
         }
+    }
+
+    public void WriteFile(String filename)  {
+        BufferedWriter out = null;
+        try{
+            out =  new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename)));
+            for(EntryDefault point: getSL()){
+                out.write(point.geometry().mbr().x1() + " " + point.geometry().mbr().y1() + "\r\n");
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+
     }
 
 }
